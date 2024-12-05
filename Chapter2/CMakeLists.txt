@@ -42,13 +42,6 @@ set(HEADERS
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-if(NOT "${XR_RUNTIME_JSON}" STREQUAL "")
-    set_target_properties(
-        ${PROJECT_NAME} PROPERTIES VS_DEBUGGER_ENVIRONMENT
-                                   "XR_RUNTIME_JSON=${XR_RUNTIME_JSON}"
-    )
-endif()
-
 target_include_directories(
     ${PROJECT_NAME}
     PRIVATE
